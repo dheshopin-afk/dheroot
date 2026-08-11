@@ -94,7 +94,266 @@
         .shop-button:hover {
             transform: translateY(-2px);
         }
+/* HERO */
 
+.hero {
+    min-height: 85vh;
+
+    padding: 80px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    max-width: 650px;
+
+    animation: heroText 1s ease;
+}
+
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #9b6b35;
+
+    font-weight: 600;
+}
+
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 em {
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    color: #9b6b35;
+}
+
+
+.hero p {
+    max-width: 550px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #5d635e;
+
+    margin-bottom: 35px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+.primary-button {
+    padding: 15px 28px;
+
+    background: #26352b;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+.secondary-button {
+    padding: 15px 20px;
+
+    color: #26352b;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.secondary-button:hover {
+    transform: translateX(5px);
+}
+
+
+/* HERO IMAGE */
+
+.hero-visual {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.image-placeholder {
+    width: min(450px, 90%);
+
+    aspect-ratio: 4 / 5;
+
+    border-radius: 220px 220px 30px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9ddca,
+            #c7b18f
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #5a4a37;
+
+    box-shadow:
+        0 30px 80px rgba(38,53,43,0.15);
+
+    animation: heroImage 1.2s ease;
+}
+
+
+.image-placeholder span {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+
+.image-placeholder small {
+    margin-top: 10px;
+
+    max-width: 200px;
+
+    line-height: 1.5;
+
+    opacity: 0.7;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes heroText {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heroImage {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* MOBILE HERO */
+
+@media (max-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 60px 5%;
+
+        text-align: center;
+    }
+
+
+    .hero-content {
+        margin: auto;
+    }
+
+
+    .hero p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-visual {
+        margin-top: 30px;
+    }
+
+}
         /* MOBILE */
 
         @media (max-width: 768px) {
@@ -149,41 +408,63 @@
 </header>
 
 
-<main>
 
-    <section style="
-        min-height:80vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-        padding:40px;
-    ">
+   <main>
 
-        <div>
+    <!-- HERO SECTION -->
 
-            <h1 style="
-                font-size:clamp(40px,7vw,80px);
-                margin-bottom:20px;
-            ">
-                Dheroot Organics
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                ORGANIC WELLNESS • NATURAL LIVING
+            </span>
+
+            <h1>
+                Rooted in Nature.<br>
+                Made for <em>Wellness.</em>
             </h1>
 
-            <p style="
-                font-size:20px;
-                max-width:600px;
-                line-height:1.6;
-            ">
-                Natural ingredients.
-                Traditional wisdom.
-                Modern wellness.
+            <p>
+                Discover carefully selected herbs, natural ingredients
+                and everyday wellness essentials inspired by nature
+                and traditional wisdom.
             </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="primary-button">
+                    Explore Products
+                </a>
+
+                <a href="#" class="secondary-button">
+                    Our Story →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="image-placeholder">
+
+                <span>PRODUCT IMAGE</span>
+
+                <small>
+                    Replace with Dheroot product photography
+                </small>
+
+            </div>
 
         </div>
 
     </section>
 
 </main>
+
 
 
 </body>
