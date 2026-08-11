@@ -1148,20 +1148,43 @@
     }
 
 }
-/* =========================
-   FOOTER
-========================= */
+/* =====================================================
+   DHEROOT ORGANICS FOOTER
+===================================================== */
 
 .footer {
-    background: #18251e;
-    color: #fff;
+    position: relative;
+
+    width: 100%;
+
+    background-image:
+        linear-gradient(
+            rgba(248, 244, 236, 0.12),
+            rgba(248, 244, 236, 0.12)
+        ),
+        url("images/footer-bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    color: #26352b;
+
+    overflow: hidden;
 }
 
 
-/* FOOTER MAIN */
+/* =====================================================
+   FOOTER MAIN
+===================================================== */
 
 .footer-main {
-    padding: 80px 7%;
+
+    width: 100%;
+
+    padding: 90px 7% 75px;
 
     display: grid;
 
@@ -1169,73 +1192,118 @@
         2fr 1fr 1fr 1fr;
 
     gap: 60px;
+
+    align-items: start;
 }
 
 
-/* BRAND */
+/* =====================================================
+   BRAND
+===================================================== */
 
 .footer-brand {
-    max-width: 350px;
+
+    max-width: 360px;
 }
 
 
 .footer-logo {
+
     display: inline-block;
+
+    text-decoration: none;
 }
 
 
 .footer-logo img {
-    width: 150px;
+
+    width: 175px;
+
     height: auto;
+
     display: block;
 
-    filter: brightness(0) invert(1);
+    object-fit: contain;
 }
 
 
 .footer-brand p {
+
     margin-top: 25px;
 
-    color: rgba(255,255,255,0.6);
+    max-width: 340px;
 
-    font-size: 14px;
+    color: #4f5a50;
+
+    font-size: 15px;
 
     line-height: 1.8;
 }
 
 
-/* SOCIALS */
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
 
 .footer-socials {
+
     display: flex;
 
     flex-wrap: wrap;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin-top: 25px;
+    margin-top: 28px;
 }
 
 
 .footer-socials a {
-    color: rgba(255,255,255,0.75);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 95px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(38,53,43,0.18);
+
+    border-radius: 30px;
+
+    color: #26352b;
+
+    background: rgba(255,255,255,0.35);
 
     text-decoration: none;
 
     font-size: 12px;
 
-    transition: 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 
 .footer-socials a:hover {
-    color: #d4ae76;
+
+    transform: translateY(-3px);
+
+    background: #26352b;
+
+    color: #fff;
 }
 
 
-/* FOOTER COLUMNS */
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
 
 .footer-column {
+
     display: flex;
 
     flex-direction: column;
@@ -1245,11 +1313,14 @@
 
 
 .footer-column h3 {
-    margin-bottom: 10px;
 
-    color: #d4ae76;
+    margin-bottom: 12px;
+
+    color: #8f6b32;
 
     font-size: 13px;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
 
@@ -1258,30 +1329,42 @@
 
 
 .footer-column a {
-    color: rgba(255,255,255,0.6);
+
+    width: fit-content;
+
+    color: #4f5a50;
 
     text-decoration: none;
 
     font-size: 14px;
 
-    transition: 0.3s ease;
+    line-height: 1.5;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
 .footer-column a:hover {
-    color: #fff;
 
-    transform: translateX(4px);
+    color: #26352b;
+
+    transform: translateX(5px);
 }
 
 
-/* FOOTER BOTTOM */
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
 
 .footer-bottom {
-    padding: 22px 7%;
 
-    border-top:
-        1px solid rgba(255,255,255,0.1);
+    width: 100%;
+
+    min-height: 70px;
+
+    padding: 20px 7%;
 
     display: flex;
 
@@ -1290,56 +1373,309 @@
     align-items: center;
 
     gap: 20px;
+
+    background: rgba(38, 53, 43, 0.94);
+
+    border-top: 2px solid #b89450;
 }
 
 
 .footer-bottom p {
-    color: rgba(255,255,255,0.45);
 
-    font-size: 11px;
+    margin: 0;
+
+    color: rgba(255,255,255,0.78);
+
+    font-size: 12px;
+
+    line-height: 1.5;
 }
 
 
-/* TABLET */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .footer-main {
+
         grid-template-columns:
-            1fr 1fr;
+            1.5fr 1fr 1fr;
 
-        gap: 50px;
-    }
+        gap: 45px;
 
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .footer-main {
-        padding: 70px 5%;
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
+        padding: 75px 6% 60px;
     }
 
 
     .footer-brand {
+
+        grid-column: span 3;
+
+        max-width: 500px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .footer {
+
+        display: block;
+
+        width: 100%;
+
+        background-position:
+            center center;
+
+        background-size:
+            auto 100%;
+
+        min-height: 600px;
+    }
+
+
+    .footer-main {
+
+        width: 100%;
+
+        padding: 65px 6% 50px;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
+
+    .footer-brand {
+
+        width: 100%;
+
         max-width: 100%;
+
+        grid-column: auto;
+    }
+
+
+    .footer-logo img {
+
+        width: 155px;
+    }
+
+
+    .footer-brand p {
+
+        max-width: 100%;
+
+        font-size: 14px;
+    }
+
+
+    .footer-socials {
+
+        gap: 8px;
+    }
+
+
+    .footer-socials a {
+
+        min-width: auto;
+
+        padding: 9px 13px;
+
+        font-size: 11px;
+    }
+
+
+    .footer-column {
+
+        width: 100%;
+
+        gap: 12px;
+    }
+
+
+    .footer-column h3 {
+
+        margin-bottom: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .footer-column a {
+
+        font-size: 14px;
     }
 
 
     .footer-bottom {
-        padding: 20px 5%;
+
+        width: 100%;
+
+        padding: 22px 6%;
+
+        min-height: auto;
 
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 8px;
+
+        text-align: left;
+    }
+
+
+    .footer-bottom p {
+
+        font-size: 11px;
+    }
+
+}
+/* =========================
+   MOBILE FOOTER FIX
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        display: block;
+        width: 100%;
+        min-height: 500px;
+        position: relative;
+        z-index: 10;
+        overflow: visible;
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 70px 5%;
+        gap: 40px;
+    }
+
+    .footer-brand,
+    .footer-column {
+        display: flex;
+        width: 100%;
+    }
+
+    .footer-logo {
+        display: inline-block;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 150px;
+        height: auto;
+    }
+
+    .footer-column {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        display: flex;
+        width: 100%;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: #26352b;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    header {
+        position: sticky;
+        top: 0;
+
+        padding: 16px 5%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        order: 2;
+    }
+
+    .shop-button {
+        display: none;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 15px 5% 25px;
+
+        background: rgba(255,255,255,0.98);
+
+        border-bottom: 1px solid #e5dfd2;
+
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px 0;
+
+        font-size: 16px;
+
+        border-bottom: 1px solid #eee8dc;
     }
 
 }
@@ -1357,6 +1693,9 @@
             <img src="images/logo.png" alt="Dheroot Organics">
         </a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+    ☰
+</button>
         <nav>
             <a href="#">Home</a>
             <a href="#">Products</a>
@@ -2035,8 +2374,47 @@
         </p>
 
     </div>
-
 </footer>
+<script>
 
+    const menuToggle = document.getElementById("menuToggle");
+    const nav = document.querySelector("nav");
+
+    menuToggle.addEventListener("click", function () {
+
+        nav.classList.toggle("active");
+
+        if (nav.classList.contains("active")) {
+
+            menuToggle.textContent = "✕";
+            menuToggle.setAttribute("aria-label", "Close menu");
+
+        } else {
+
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "Open menu");
+
+        }
+
+    });
+
+
+    const menuLinks = document.querySelectorAll("nav a");
+
+    menuLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            nav.classList.remove("active");
+
+            menuToggle.textContent = "☰";
+
+            menuToggle.setAttribute("aria-label", "Open menu");
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
