@@ -1183,6 +1183,212 @@
     }
 
 }
+/* =========================
+   INGREDIENT SHOWCASE
+========================= */
+
+.showcase {
+    padding: 120px 0;
+
+    background: #f8f4ec;
+
+    overflow: hidden;
+}
+
+
+.showcase-header {
+    padding: 0 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+
+    margin-bottom: 55px;
+}
+
+
+.showcase-header h2 {
+    margin-top: 15px;
+
+    font-size:
+        clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+}
+
+
+.showcase-header h2 em {
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    color: #9b6b35;
+}
+
+
+.showcase-link {
+    color: #26352b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* TRACK */
+
+.showcase-track {
+    display: flex;
+
+    gap: 25px;
+
+    padding-left: 7%;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+}
+
+
+.showcase-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ITEM */
+
+.showcase-item {
+    flex: 0 0 300px;
+
+    background: #fff;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.showcase-item:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(38,53,43,0.12);
+}
+
+
+/* IMAGE */
+
+.showcase-image {
+    height: 360px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8c7ad,
+            #a98d67
+        );
+
+    color: #5a4a37;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.showcase-item:hover
+.showcase-image {
+    transform: scale(1.04);
+}
+
+
+/* INFO */
+
+.showcase-info {
+    padding: 25px;
+}
+
+
+.showcase-info > span {
+    color: #9b6b35;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+
+.showcase-info h3 {
+    margin-top: 10px;
+
+    font-size: 24px;
+}
+
+
+.showcase-info p {
+    margin-top: 10px;
+
+    color: #666;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .showcase {
+        padding: 80px 0;
+    }
+
+    .showcase-header {
+        padding: 0 5%;
+
+        align-items: start;
+
+        flex-direction: column;
+    }
+
+    .showcase-track {
+        padding-left: 5%;
+    }
+
+    .showcase-item {
+        flex-basis: 270px;
+    }
+
+}
 
     </style>
 
@@ -1724,6 +1930,142 @@
             ORGANIC<br>
             WELLNESS
         </div>
+
+    </div>
+
+</section>
+<!-- INGREDIENT SHOWCASE -->
+
+<section class="showcase">
+
+    <div class="showcase-header">
+
+        <div>
+
+            <span class="section-label">
+                NATURAL SELECTION
+            </span>
+
+            <h2>
+                Ingredients with
+                <em>character.</em>
+            </h2>
+
+        </div>
+
+        <a href="#" class="showcase-link">
+            View All Products →
+        </a>
+
+    </div>
+
+
+    <div class="showcase-track">
+
+
+        <article class="showcase-item">
+
+            <div class="showcase-image">
+                MORINGA
+            </div>
+
+            <div class="showcase-info">
+
+                <span>
+                    HERBAL POWDER
+                </span>
+
+                <h3>
+                    Moringa
+                </h3>
+
+                <p>
+                    Green vitality from
+                    a naturally valued leaf.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="showcase-item">
+
+            <div class="showcase-image">
+                SESAME
+            </div>
+
+            <div class="showcase-info">
+
+                <span>
+                    NATURAL SEED
+                </span>
+
+                <h3>
+                    Black Sesame
+                </h3>
+
+                <p>
+                    Rich, earthy and naturally
+                    full of character.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="showcase-item">
+
+            <div class="showcase-image">
+                ASHWAGANDHA
+            </div>
+
+            <div class="showcase-info">
+
+                <span>
+                    AYURVEDIC HERB
+                </span>
+
+                <h3>
+                    Ashwagandha
+                </h3>
+
+                <p>
+                    A traditional ingredient
+                    rooted in Ayurveda.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="showcase-item">
+
+            <div class="showcase-image">
+                PINK SALT
+            </div>
+
+            <div class="showcase-info">
+
+                <span>
+                    NATURAL MINERAL
+                </span>
+
+                <h3>
+                    Himalayan Pink Salt
+                </h3>
+
+                <p>
+                    Naturally sourced mineral
+                    salt with distinctive character.
+                </p>
+
+            </div>
+
+        </article>
+
 
     </div>
 
