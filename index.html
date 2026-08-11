@@ -603,6 +603,212 @@
     }
 
 }
+/* =========================
+   WHY DHEROOT
+========================= */
+
+.why-dheroot {
+    padding: 120px 7%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #fffdf8;
+}
+
+
+/* VISUAL */
+
+.why-visual {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.why-image {
+    width: min(500px, 100%);
+
+    aspect-ratio: 4 / 5;
+
+    border-radius:
+        30px 180px 30px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8c7ad,
+            #b49b75
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #5a4a37;
+
+    box-shadow:
+        0 30px 80px
+        rgba(38, 53, 43, 0.12);
+}
+
+
+.why-image span {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+
+.why-image small {
+    margin-top: 10px;
+
+    opacity: 0.7;
+}
+
+
+/* CONTENT */
+
+.why-content {
+    max-width: 650px;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #9b6b35;
+
+    font-weight: 700;
+}
+
+
+.why-content h2 {
+    font-size:
+        clamp(38px, 5vw, 65px);
+
+    line-height: 1.08;
+
+    margin-bottom: 25px;
+}
+
+
+.why-content > p {
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 45px;
+}
+
+
+/* BENEFITS */
+
+.benefit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px 30px;
+}
+
+
+.benefit {
+    border-top:
+        1px solid #ddd5c8;
+
+    padding-top: 20px;
+}
+
+
+.benefit-number {
+    color: #9b6b35;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.benefit h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.benefit p {
+    color: #666;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .why-dheroot {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .why-visual {
+        order: 1;
+    }
+
+    .why-content {
+        order: 2;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .why-dheroot {
+        padding: 80px 5%;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+}
 
 
 /* CATEGORY GRID */
@@ -1076,6 +1282,124 @@
 
         </article>
 
+
+    </div>
+
+</section>
+<!-- WHY DHEROOT -->
+
+<section class="why-dheroot">
+
+    <div class="why-visual">
+
+        <div class="why-image">
+
+            <span>DHEROOT IMAGE</span>
+
+            <small>
+                Brand / ingredient photography
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="why-content">
+
+        <span class="section-label">
+            WHY DHEROOT
+        </span>
+
+        <h2>
+            Simple ingredients.
+            Thoughtful choices.
+        </h2>
+
+        <p>
+            We believe natural wellness should be simple,
+            transparent and accessible. Dheroot brings together
+            carefully selected ingredients with a modern approach
+            to everyday living.
+        </p>
+
+
+        <div class="benefit-grid">
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    01
+                </div>
+
+                <h3>
+                    Carefully Selected
+                </h3>
+
+                <p>
+                    Ingredients chosen with attention
+                    to quality and consistency.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    02
+                </div>
+
+                <h3>
+                    Natural Ingredients
+                </h3>
+
+                <p>
+                    Straightforward ingredients inspired
+                    by nature.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    03
+                </div>
+
+                <h3>
+                    Quality Focused
+                </h3>
+
+                <p>
+                    We focus on quality throughout
+                    the product journey.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">
+                    04
+                </div>
+
+                <h3>
+                    Everyday Wellness
+                </h3>
+
+                <p>
+                    Natural choices designed for
+                    modern everyday routines.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
