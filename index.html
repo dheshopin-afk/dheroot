@@ -367,6 +367,143 @@
             }
 
         }
+/* =========================
+   PRODUCT CATEGORIES
+========================= */
+
+.categories {
+    padding: 110px 7%;
+    background: #fffdf8;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.section-heading > span {
+    display: block;
+    margin-bottom: 15px;
+    color: #9b6b35;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* CATEGORY GRID */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* CATEGORY CARD */
+
+.category-card {
+    text-decoration: none;
+    color: #26352b;
+    background: #f4eee3;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(38, 53, 43, 0.12);
+}
+
+
+/* CATEGORY IMAGE */
+
+.category-image {
+    height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #ded2bd,
+        #bfa987
+    );
+
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+
+/* CATEGORY CONTENT */
+
+.category-content {
+    padding: 25px;
+}
+
+.category-content h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.category-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.category-content span {
+    font-weight: 700;
+    font-size: 14px;
+    color: #9b6b35;
+}
+
+
+/* CATEGORY TABLET */
+
+@media (max-width: 1000px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* CATEGORY MOBILE */
+
+@media (max-width: 600px) {
+
+    .categories {
+        padding: 80px 5%;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
 
     </style>
 
@@ -462,6 +599,118 @@
         </div>
 
     </section>
+<!-- PRODUCT CATEGORIES -->
+
+<section class="categories">
+
+    <div class="section-heading">
+
+        <span>EXPLORE OUR WORLD</span>
+
+        <h2>
+            Nature, thoughtfully selected.
+        </h2>
+
+        <p>
+            Discover natural ingredients and wellness essentials
+            carefully chosen for everyday living.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <a href="#" class="category-card">
+
+            <div class="category-image">
+                HERBS
+            </div>
+
+            <div class="category-content">
+
+                <h3>Ayurvedic Herbs</h3>
+
+                <p>
+                    Traditional herbs inspired by
+                    ancient wellness practices.
+                </p>
+
+                <span>Explore →</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="#" class="category-card">
+
+            <div class="category-image">
+                POWDERS
+            </div>
+
+            <div class="category-content">
+
+                <h3>Herbal Powders</h3>
+
+                <p>
+                    Carefully processed natural
+                    powders for everyday wellness.
+                </p>
+
+                <span>Explore →</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="#" class="category-card">
+
+            <div class="category-image">
+                DRY FRUITS
+            </div>
+
+            <div class="category-content">
+
+                <h3>Premium Dry Fruits</h3>
+
+                <p>
+                    Naturally delicious ingredients
+                    selected for quality and taste.
+                </p>
+
+                <span>Explore →</span>
+
+            </div>
+
+        </a>
+
+
+        <a href="#" class="category-card">
+
+            <div class="category-image">
+                NUTRITION
+            </div>
+
+            <div class="category-content">
+
+                <h3>Natural Nutrition</h3>
+
+                <p>
+                    Simple, wholesome ingredients
+                    for modern lifestyles.
+                </p>
+
+                <span>Explore →</span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 
 </main>
 
