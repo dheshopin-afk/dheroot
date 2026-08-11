@@ -1009,6 +1009,145 @@
                 padding: 28px;
             }
         }
+        /* =========================
+   NEWSLETTER CTA
+========================= */
+
+.newsletter {
+    padding: 120px 7%;
+    background: #26352b;
+    color: #fff;
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.newsletter .section-label {
+    color: #d4ae76;
+}
+
+.newsletter h2 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.newsletter h2 em {
+    font-family: Georgia, serif;
+    color: #d4ae76;
+    font-weight: 400;
+}
+
+.newsletter p {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: rgba(255,255,255,0.7);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* FORM */
+
+.newsletter-form {
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+
+    padding: 6px;
+
+    background: #fff;
+
+    border-radius: 40px;
+}
+
+.newsletter-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #26352b;
+
+    font-size: 15px;
+}
+
+.newsletter-form input::placeholder {
+    color: #999;
+}
+
+.newsletter-form button {
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 30px;
+
+    background: #d4ae76;
+
+    color: #26352b;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+}
+
+.newsletter small {
+    display: block;
+
+    margin-top: 18px;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .newsletter {
+        padding: 80px 5%;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+
+        padding: 8px;
+
+        border-radius: 20px;
+
+        gap: 5px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+}
     </style>
 </head>
 
@@ -1557,7 +1696,48 @@
             </div>
 
         </section>
+<!-- NEWSLETTER CTA -->
 
+<section class="newsletter">
+
+    <div class="newsletter-content">
+
+        <span class="section-label">
+            STAY CONNECTED
+        </span>
+
+        <h2>
+            Bring a little more
+            <em>nature</em> into your everyday.
+        </h2>
+
+        <p>
+            Discover natural ingredients, wellness inspiration
+            and new products from Dheroot Organics.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                aria-label="Email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe →
+            </button>
+
+        </form>
+
+        <small>
+            No spam. Just occasional updates from Dheroot.
+        </small>
+
+    </div>
+
+</section>
     </main>
 
 </body>
