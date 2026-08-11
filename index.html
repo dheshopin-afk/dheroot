@@ -1,105 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dheroot Organics | Natural Wellness</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dheroot Organics</title>
 
     <style>
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
             background: #f8f4ec;
             color: #26352b;
         }
 
+        /* HEADER */
+
         header {
-            padding: 25px 8%;
+            width: 100%;
+            padding: 20px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            background: rgba(255,255,255,0.9);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            border-bottom: 1px solid #e5dfd2;
         }
+
+        /* LOGO */
 
         .logo {
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            font-size: 12px;
+            display: block;
+            letter-spacing: 3px;
+            font-weight: 400;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            gap: 30px;
         }
 
         nav a {
-            margin-left: 25px;
             text-decoration: none;
             color: #26352b;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 8%;
+        nav a:hover {
+            color: #9b6b35;
         }
 
-        .hero-content {
-            max-width: 650px;
-        }
+        /* BUTTON */
 
-        h1 {
-            font-size: clamp(45px, 7vw, 80px);
-            margin: 0 0 20px;
-        }
+        .shop-button {
+            padding: 12px 22px;
 
-        .hero p {
-            font-size: 20px;
-            line-height: 1.7;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 28px;
             background: #26352b;
             color: white;
-            text-decoration: none;
+
             border-radius: 30px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
         }
+
+        .shop-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
+
 <header>
-    <div class="logo">Dheroot</div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+    <div class="logo">
 
-<section class="hero">
+        Dheroot
 
-    <div class="hero-content">
-
-        <h1>Rooted in Nature.</h1>
-
-        <p>
-            Natural ingredients, traditional wisdom and modern wellness
-            come together with Dheroot Organics.
-        </p>
-
-        <a href="#" class="button">
-            Explore Products
-        </a>
+        <span>ORGANICS</span>
 
     </div>
 
-</section>
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#">Products</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Journal</a>
+
+        <a href="#">Contact</a>
+
+    </nav>
+
+
+    <a href="#" class="shop-button">
+        Shop Now
+    </a>
+
+</header>
+
+
+<main>
+
+    <section style="
+        min-height:80vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:40px;
+    ">
+
+        <div>
+
+            <h1 style="
+                font-size:clamp(40px,7vw,80px);
+                margin-bottom:20px;
+            ">
+                Dheroot Organics
+            </h1>
+
+            <p style="
+                font-size:20px;
+                max-width:600px;
+                line-height:1.6;
+            ">
+                Natural ingredients.
+                Traditional wisdom.
+                Modern wellness.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
 
 </body>
 </html>
