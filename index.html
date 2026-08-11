@@ -1,67 +1,69 @@
-<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dheroot Organics</title>
+    <meta name="description" content="Dheroot Organics — natural ingredients, Ayurvedic herbs and everyday wellness essentials.">
 
     <style>
-
+        /* =========================
+           RESET
+        ========================= */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #f8f4ec;
             color: #26352b;
+            overflow-x: hidden;
         }
 
-        /* HEADER */
+        img {
+            max-width: 100%;
+        }
 
+        /* =========================
+           HEADER
+        ========================= */
         header {
             width: 100%;
             padding: 20px 7%;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            background: rgba(255,255,255,0.9);
-
+            gap: 25px;
+            background: rgba(255, 255, 255, 0.96);
             position: sticky;
             top: 0;
             z-index: 1000;
-
             border-bottom: 1px solid #e5dfd2;
         }
 
-        /* LOGO */
-
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            font-size: 12px;
             display: block;
-            letter-spacing: 3px;
-            font-weight: 400;
+            text-decoration: none;
+            flex-shrink: 0;
         }
 
-        /* NAVIGATION */
+        .logo img {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
 
         nav {
             display: flex;
+            align-items: center;
             gap: 30px;
         }
 
@@ -69,2340 +71,1485 @@
             text-decoration: none;
             color: #26352b;
             font-size: 15px;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: #9b6b35;
         }
 
-        /* BUTTON */
-
         .shop-button {
             padding: 12px 22px;
-
             background: #26352b;
-            color: white;
-
+            color: #fff;
             border-radius: 30px;
-
             text-decoration: none;
-
-            transition: 0.3s;
+            transition: 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .shop-button:hover {
             transform: translateY(-2px);
         }
-/* HERO */
 
-.hero {
-    min-height: 85vh;
-
-    padding: 80px 7%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-
-/* HERO CONTENT */
-
-.hero-content {
-    max-width: 650px;
-
-    animation: heroText 1s ease;
-}
-
-
-.hero-label {
-    display: inline-block;
-
-    margin-bottom: 25px;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    color: #9b6b35;
-
-    font-weight: 600;
-}
-
-
-.hero h1 {
-    font-size: clamp(48px, 6vw, 82px);
-
-    line-height: 1.02;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 30px;
-}
-
-
-.hero h1 em {
-    font-family: Georgia, serif;
-
-    font-weight: 400;
-
-    color: #9b6b35;
-}
-
-
-.hero p {
-    max-width: 550px;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    color: #5d635e;
-
-    margin-bottom: 35px;
-}
-
-
-/* BUTTONS */
-
-.hero-buttons {
-    display: flex;
-
-    gap: 15px;
-
-    align-items: center;
-}
-
-
-.primary-button {
-    padding: 15px 28px;
-
-    background: #26352b;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    transition: 0.3s;
-}
-
-
-.primary-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-
-.secondary-button {
-    padding: 15px 20px;
-
-    color: #26352b;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-
-.secondary-button:hover {
-    transform: translateX(5px);
-}
-
-
-/* HERO IMAGE */
-
-.hero-visual {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-.image-placeholder {
-    width: min(450px, 90%);
-
-    aspect-ratio: 4 / 5;
-
-    border-radius: 220px 220px 30px 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e9ddca,
-            #c7b18f
-        );
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    color: #5a4a37;
-
-    box-shadow:
-        0 30px 80px rgba(38,53,43,0.15);
-
-    animation: heroImage 1.2s ease;
-}
-
-
-.image-placeholder span {
-    font-size: 14px;
-
-    letter-spacing: 3px;
-
-    font-weight: 700;
-}
-
-
-.image-placeholder small {
-    margin-top: 10px;
-
-    max-width: 200px;
-
-    line-height: 1.5;
-
-    opacity: 0.7;
-}
-
-
-/* ANIMATIONS */
-
-@keyframes heroText {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes heroImage {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(40px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0) scale(1);
-    }
-
-}
-
-
-/* MOBILE HERO */
-
-@media (max-width: 768px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-
-        padding: 60px 5%;
-
-        text-align: center;
-    }
-
-
-    .hero-content {
-        margin: auto;
-    }
-
-
-    .hero p {
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-
-
-    .hero-buttons {
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-
-    .hero-visual {
-        margin-top: 30px;
-    }
-
-}
-        /* MOBILE */
-
+        /* =========================
+           HERO
+        ========================= */
+        .hero {
+            min-height: 85vh;
+            padding: 80px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: heroText 1s ease;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 25px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #9b6b35;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 em {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            color: #9b6b35;
+        }
+
+        .hero p {
+            max-width: 550px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #5d635e;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-button {
+            padding: 15px 28px;
+            background: #26352b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .secondary-button {
+            padding: 15px 20px;
+            color: #26352b;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            transform: translateX(5px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder {
+            width: min(450px, 90%);
+            aspect-ratio: 4 / 5;
+            border-radius: 220px 220px 30px 30px;
+            background: linear-gradient(135deg, #e9ddca, #c7b18f);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #5a4a37;
+            box-shadow: 0 30px 80px rgba(38,53,43,0.15);
+            animation: heroImage 1.2s ease;
+        }
+
+        .image-placeholder span {
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .image-placeholder small {
+            margin-top: 10px;
+            max-width: 200px;
+            line-height: 1.5;
+            opacity: 0.7;
+        }
+
+        /* =========================
+           COMMON HEADINGS
+        ========================= */
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading > span,
+        .section-label {
+            display: block;
+            margin-bottom: 15px;
+            color: #9b6b35;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(36px, 5vw, 60px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-heading p {
+            color: #666;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PRODUCT CATEGORIES
+        ========================= */
+        .categories {
+            padding: 110px 7%;
+            background: #fffdf8;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            text-decoration: none;
+            color: #26352b;
+            background: #f4eee3;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(38,53,43,0.12);
+        }
+
+        .category-image {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ded2bd, #bfa987);
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.05);
+        }
+
+        .category-content {
+            padding: 25px;
+        }
+
+        .category-content h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .category-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .category-content span {
+            font-weight: 700;
+            font-size: 14px;
+            color: #9b6b35;
+        }
+
+        /* =========================
+           FEATURED PRODUCTS
+        ========================= */
+        .products {
+            padding: 110px 7%;
+            background: #f8f4ec;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(38,53,43,0.12);
+        }
+
+        .product-image {
+            height: 380px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e7dccb, #c8b596);
+            color: #665744;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 7px 12px;
+            border-radius: 20px;
+            background: #26352b;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 28px;
+        }
+
+        .product-category {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #9b6b35;
+        }
+
+        .product-info h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .product-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .product-bottom strong {
+            font-size: 22px;
+        }
+
+        .product-bottom a {
+            text-decoration: none;
+            color: #26352b;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .product-bottom a:hover {
+            color: #9b6b35;
+        }
+
+        /* =========================
+           WHY DHEROOT
+        ========================= */
+        .why-dheroot {
+            padding: 120px 7%;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+            background: #fffdf8;
+        }
+
+        .why-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .why-image {
+            width: min(500px, 100%);
+            aspect-ratio: 4 / 5;
+            border-radius: 30px 180px 30px 30px;
+            background: linear-gradient(145deg, #d8c7ad, #b49b75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #5a4a37;
+            box-shadow: 0 30px 80px rgba(38,53,43,0.12);
+        }
+
+        .why-image span {
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .why-image small {
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+        .why-content {
+            max-width: 650px;
+        }
+
+        .why-content h2 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .why-content > p {
+            color: #666;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 45px;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px 30px;
+        }
+
+        .benefit {
+            border-top: 1px solid #ddd5c8;
+            padding-top: 20px;
+        }
+
+        .benefit-number {
+            color: #9b6b35;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .benefit h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .benefit p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* =========================
+           BRAND STORY
+        ========================= */
+        .brand-story {
+            position: relative;
+            padding: 130px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+            background: #26352b;
+            color: #fff;
+        }
+
+        .story-content {
+            max-width: 620px;
+        }
+
+        .brand-story .section-label {
+            color: #d4ae76;
+        }
+
+        .story-content h2 {
+            font-size: clamp(42px, 5vw, 70px);
+            line-height: 1.05;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .story-content h2 em {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            color: #d4ae76;
+        }
+
+        .story-content p {
+            max-width: 560px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.72);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .story-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 24px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .story-button:hover {
+            background: #fff;
+            color: #26352b;
+            transform: translateY(-3px);
+        }
+
+        .story-visual {
+            position: relative;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-card {
+            position: absolute;
+            width: 310px;
+            height: 410px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            letter-spacing: 4px;
+        }
+
+        .story-card-back {
+            background: #8f7655;
+            transform: rotate(-10deg) translate(-30px, 15px);
+            opacity: 0.7;
+        }
+
+        .story-card-front {
+            background: linear-gradient(145deg, #e4d5bd, #b89c72);
+            color: #26352b;
+            transform: rotate(5deg);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+        }
+
+        .story-card-front span {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .story-card-front small {
+            margin-top: 12px;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .story-circle {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #d4ae76;
+            color: #26352b;
+            font-size: 11px;
+            line-height: 1.5;
+            letter-spacing: 2px;
+            font-weight: 700;
+            transform: rotate(-10deg);
+        }
+
+        /* =========================
+           INGREDIENT SHOWCASE
+        ========================= */
+        .showcase {
+            padding: 120px 0;
+            background: #f8f4ec;
+            overflow: hidden;
+        }
+
+        .showcase-header {
+            padding: 0 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 40px;
+            margin-bottom: 55px;
+        }
+
+        .showcase-header h2 {
+            margin-top: 15px;
+            font-size: clamp(40px, 5vw, 65px);
+            line-height: 1.05;
+        }
+
+        .showcase-header h2 em {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            color: #9b6b35;
+        }
+
+        .showcase-link {
+            color: #26352b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .showcase-track {
+            display: flex;
+            gap: 25px;
+            padding-left: 7%;
+            overflow-x: auto;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        .showcase-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .showcase-item {
+            flex: 0 0 300px;
+            background: #fff;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(38,53,43,0.12);
+        }
+
+        .showcase-image {
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #d8c7ad, #a98d67);
+            color: #5a4a37;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .showcase-info {
+            padding: 25px;
+        }
+
+        .showcase-info > span {
+            color: #9b6b35;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .showcase-info h3 {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        .showcase-info p {
+            margin-top: 10px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TESTIMONIALS
+        ========================= */
+        .testimonials {
+            padding: 120px 7%;
+            background: #fffdf8;
+        }
+
+        .testimonial-heading {
+            max-width: 750px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            padding: 35px;
+            border: 1px solid #e4ddd1;
+            border-radius: 25px;
+            background: #fff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 50px rgba(38,53,43,0.09);
+        }
+
+        .featured-testimonial {
+            background: #26352b;
+            color: #fff;
+            border-color: #26352b;
+            transform: translateY(-15px);
+        }
+
+        .featured-testimonial:hover {
+            transform: translateY(-22px);
+        }
+
+        .stars {
+            color: #c79652;
+            font-size: 16px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-card blockquote {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .featured-testimonial blockquote {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .customer-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e5d6bd;
+            color: #26352b;
+            font-weight: 700;
+        }
+
+        .customer strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .customer span {
+            display: block;
+            margin-top: 3px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .featured-testimonial .customer span {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+        @keyframes heroText {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroImage {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+        @media (max-width: 1000px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .why-dheroot,
+            .brand-story {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .why-visual {
+                order: 1;
+            }
+
+            .why-content {
+                order: 2;
+            }
+
+            .story-visual {
+                min-height: 500px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-testimonial {
+                transform: none;
+            }
+
+            .featured-testimonial:hover {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
         @media (max-width: 768px) {
-
             header {
-                padding: 18px 5%;
+                padding: 15px 5%;
+                gap: 12px;
+            }
+
+            .logo {
+                flex-shrink: 0;
+            }
+
+            .logo img {
+                width: 115px;
+                height: auto;
+                display: block;
             }
 
             nav {
                 display: none;
             }
 
+            .shop-button {
+                margin-left: auto;
+                padding: 10px 15px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 5%;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                margin-top: 30px;
+            }
+
+            .brand-story {
+                padding: 90px 5%;
+            }
+
+            .story-visual {
+                min-height: 440px;
+            }
+
+            .story-card {
+                width: 250px;
+                height: 340px;
+            }
+
+            .story-circle {
+                width: 100px;
+                height: 100px;
+                right: 0;
+                bottom: 0;
+            }
         }
-/* =========================
-   PRODUCT CATEGORIES
-========================= */
 
-.categories {
-    padding: 110px 7%;
-    background: #fffdf8;
-}
-
-.section-heading {
-    max-width: 700px;
-    margin-bottom: 55px;
-}
-
-.section-heading > span {
-    display: block;
-    margin-bottom: 15px;
-    color: #9b6b35;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-.section-heading h2 {
-    font-size: clamp(36px, 5vw, 60px);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.section-heading p {
-    color: #666;
-    font-size: 17px;
-    line-height: 1.7;
-}
-/* =========================
-   FEATURED PRODUCTS
-========================= */
-
-.products {
-    padding: 110px 7%;
-    background: #f8f4ec;
-}
-
-
-/* PRODUCT GRID */
-
-.product-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 30px;
-}
-
-
-/* PRODUCT CARD */
-
-.product-card {
-    background: #ffffff;
-
-    border-radius: 25px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-.product-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 50px
-        rgba(38, 53, 43, 0.12);
-}
-
-
-/* PRODUCT IMAGE */
-
-.product-image {
-    height: 380px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e7dccb,
-            #c8b596
-        );
-
-    color: #665744;
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-}
-
-
-/* BADGE */
-
-.product-badge {
-    position: absolute;
-
-    top: 20px;
-
-    left: 20px;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    background: #26352b;
-
-    color: white;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-}
-
-
-/* PRODUCT INFORMATION */
-
-.product-info {
-    padding: 28px;
-}
-
-
-.product-category {
-    display: block;
-
-    margin-bottom: 10px;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-
-    color: #9b6b35;
-}
-
-
-.product-info h3 {
-    font-size: 25px;
-
-    margin-bottom: 12px;
-}
-
-
-.product-info p {
-    color: #666;
-
-    line-height: 1.6;
-
-    margin-bottom: 25px;
-}
-
-
-/* PRICE + LINK */
-
-.product-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-}
-
-
-.product-bottom strong {
-    font-size: 22px;
-}
-
-
-.product-bottom a {
-    text-decoration: none;
-
-    color: #26352b;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    transition: 0.3s;
-}
-
-
-.product-bottom a:hover {
-    color: #9b6b35;
-}
-
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .product-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .products {
-        padding: 80px 5%;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-image {
-        height: 320px;
-    }
-
-}
-/* =========================
-   WHY DHEROOT
-========================= */
-
-.why-dheroot {
-    padding: 120px 7%;
-
-    display: grid;
-
-    grid-template-columns:
-        0.9fr 1.1fr;
-
-    gap: 80px;
-
-    align-items: center;
-
-    background: #fffdf8;
-}
-
-
-/* VISUAL */
-
-.why-visual {
-    display: flex;
-
-    justify-content: center;
-}
-
-
-.why-image {
-    width: min(500px, 100%);
-
-    aspect-ratio: 4 / 5;
-
-    border-radius:
-        30px 180px 30px 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d8c7ad,
-            #b49b75
-        );
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    color: #5a4a37;
-
-    box-shadow:
-        0 30px 80px
-        rgba(38, 53, 43, 0.12);
-}
-
-
-.why-image span {
-    font-size: 14px;
-
-    letter-spacing: 3px;
-
-    font-weight: 700;
-}
-
-
-.why-image small {
-    margin-top: 10px;
-
-    opacity: 0.7;
-}
-
-
-/* CONTENT */
-
-.why-content {
-    max-width: 650px;
-}
-
-
-.section-label {
-    display: block;
-
-    margin-bottom: 18px;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    color: #9b6b35;
-
-    font-weight: 700;
-}
-
-
-.why-content h2 {
-    font-size:
-        clamp(38px, 5vw, 65px);
-
-    line-height: 1.08;
-
-    margin-bottom: 25px;
-}
-
-
-.why-content > p {
-    color: #666;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 45px;
-}
-
-
-/* BENEFITS */
-
-.benefit-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 35px 30px;
-}
-
-
-.benefit {
-    border-top:
-        1px solid #ddd5c8;
-
-    padding-top: 20px;
-}
-
-
-.benefit-number {
-    color: #9b6b35;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 12px;
-}
-
-
-.benefit h3 {
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-.benefit p {
-    color: #666;
-
-    line-height: 1.6;
-
-    font-size: 14px;
-}
-
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .why-dheroot {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-    }
-
-    .why-visual {
-        order: 1;
-    }
-
-    .why-content {
-        order: 2;
-    }
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .why-dheroot {
-        padding: 80px 5%;
-    }
-
-    .benefit-grid {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-}
-/* =========================
-   BRAND STORY
-========================= */
-
-.brand-story {
-    position: relative;
-
-    padding: 130px 7%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 90px;
-
-    align-items: center;
-
-    background: #26352b;
-
-    color: #fff;
-}
-
-
-/* STORY CONTENT */
-
-.story-content {
-    max-width: 620px;
-}
-
-
-.brand-story .section-label {
-    color: #d4ae76;
-}
-
-
-.story-content h2 {
-    font-size: clamp(42px, 5vw, 70px);
-
-    line-height: 1.05;
-
-    margin-bottom: 30px;
-
-    letter-spacing: -2px;
-}
-
-
-.story-content h2 em {
-    font-family: Georgia, serif;
-
-    font-weight: 400;
-
-    color: #d4ae76;
-}
-
-
-.story-content p {
-    max-width: 560px;
-
-    margin-bottom: 20px;
-
-    color: rgba(255,255,255,0.72);
-
-    font-size: 17px;
-
-    line-height: 1.8;
-}
-
-
-/* STORY BUTTON */
-
-.story-button {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 14px 24px;
-
-    border: 1px solid
-        rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    color: #fff;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-
-.story-button:hover {
-    background: #fff;
-
-    color: #26352b;
-
-    transform: translateY(-3px);
-}
-
-
-/* STORY VISUAL */
-
-.story-visual {
-    position: relative;
-
-    min-height: 550px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* STORY CARDS */
-
-.story-card {
-    position: absolute;
-
-    width: 310px;
-
-    height: 410px;
-
-    border-radius: 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    letter-spacing: 4px;
-}
-
-
-.story-card-back {
-    background: #8f7655;
-
-    transform:
-        rotate(-10deg)
-        translate(-30px, 15px);
-
-    opacity: 0.7;
-}
-
-
-.story-card-front {
-    background:
-        linear-gradient(
-            145deg,
-            #e4d5bd,
-            #b89c72
-        );
-
-    color: #26352b;
-
-    transform: rotate(5deg);
-
-    box-shadow:
-        0 30px 70px
-        rgba(0,0,0,0.25);
-}
-
-
-.story-card-front span {
-    font-size: 28px;
-
-    font-weight: 700;
-}
-
-
-.story-card-front small {
-    margin-top: 12px;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-}
-
-
-/* CIRCLE */
-
-.story-circle {
-    position: absolute;
-
-    right: 5%;
-
-    bottom: 5%;
-
-    width: 130px;
-
-    height: 130px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background: #d4ae76;
-
-    color: #26352b;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-
-    transform: rotate(-10deg);
-}
-
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .brand-story {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-
-        padding: 100px 7%;
-    }
-
-    .story-visual {
-        min-height: 500px;
-    }
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .brand-story {
-        padding: 80px 5%;
-    }
-
-    .story-visual {
-        min-height: 420px;
-    }
-
-    .story-card {
-        width: 240px;
-
-        height: 330px;
-    }
-
-    .story-circle {
-        width: 100px;
-
-        height: 100px;
-
-        right: 0;
-
-        bottom: 0;
-    }
-
-}
-
-
-/* CATEGORY GRID */
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-
-/* CATEGORY CARD */
-
-.category-card {
-    text-decoration: none;
-    color: #26352b;
-    background: #f4eee3;
-    border-radius: 25px;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(38, 53, 43, 0.12);
-}
-
-
-/* CATEGORY IMAGE */
-
-.category-image {
-    height: 260px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 14px;
-    letter-spacing: 3px;
-    font-weight: 700;
-
-    background: linear-gradient(
-        135deg,
-        #ded2bd,
-        #bfa987
-    );
-
-    transition: transform 0.5s ease;
-}
-
-.category-card:hover .category-image {
-    transform: scale(1.05);
-}
-
-
-/* CATEGORY CONTENT */
-
-.category-content {
-    padding: 25px;
-}
-
-.category-content h3 {
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.category-content p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.category-content span {
-    font-weight: 700;
-    font-size: 14px;
-    color: #9b6b35;
-}
-
-
-/* CATEGORY TABLET */
-
-@media (max-width: 1000px) {
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-/* CATEGORY MOBILE */
-
-@media (max-width: 600px) {
-
-    .categories {
-        padding: 80px 5%;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-/* =========================
-   INGREDIENT SHOWCASE
-========================= */
-
-.showcase {
-    padding: 120px 0;
-
-    background: #f8f4ec;
-
-    overflow: hidden;
-}
-
-
-.showcase-header {
-    padding: 0 7%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    gap: 40px;
-
-    margin-bottom: 55px;
-}
-
-
-.showcase-header h2 {
-    margin-top: 15px;
-
-    font-size:
-        clamp(40px, 5vw, 65px);
-
-    line-height: 1.05;
-}
-
-
-.showcase-header h2 em {
-    font-family: Georgia, serif;
-
-    font-weight: 400;
-
-    color: #9b6b35;
-}
-
-
-.showcase-link {
-    color: #26352b;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-}
-
-
-/* TRACK */
-
-.showcase-track {
-    display: flex;
-
-    gap: 25px;
-
-    padding-left: 7%;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-
-    scroll-behavior: smooth;
-}
-
-
-.showcase-track::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* ITEM */
-
-.showcase-item {
-    flex: 0 0 300px;
-
-    background: #fff;
-
-    border-radius: 25px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-.showcase-item:hover {
-    transform: translateY(-10px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(38,53,43,0.12);
-}
-
-
-/* IMAGE */
-
-.showcase-image {
-    height: 360px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d8c7ad,
-            #a98d67
-        );
-
-    color: #5a4a37;
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    font-weight: 700;
-
-    transition:
-        transform 0.5s ease;
-}
-
-
-.showcase-item:hover
-.showcase-image {
-    transform: scale(1.04);
-}
-
-
-/* INFO */
-
-.showcase-info {
-    padding: 25px;
-}
-
-
-.showcase-info > span {
-    color: #9b6b35;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-}
-
-
-.showcase-info h3 {
-    margin-top: 10px;
-
-    font-size: 24px;
-}
-
-
-.showcase-info p {
-    margin-top: 10px;
-
-    color: #666;
-
-    line-height: 1.6;
-
-    font-size: 14px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .showcase {
-        padding: 80px 0;
-    }
-
-    .showcase-header {
-        padding: 0 5%;
-
-        align-items: start;
-
-        flex-direction: column;
-    }
-
-    .showcase-track {
-        padding-left: 5%;
-    }
-
-    .showcase-item {
-        flex-basis: 270px;
-    }
-
-}
-/* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonials {
-    padding: 120px 7%;
-
-    background: #fffdf8;
-}
-
-
-.testimonial-heading {
-    max-width: 750px;
-}
-
-
-/* GRID */
-
-.testimonial-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-/* CARD */
-
-.testimonial-card {
-    padding: 35px;
-
-    border:
-        1px solid #e4ddd1;
-
-    border-radius: 25px;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-.testimonial-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 20px 50px
-        rgba(38,53,43,0.09);
-}
-
-
-/* FEATURED */
-
-.featured-testimonial {
-    background: #26352b;
-
-    color: #fff;
-
-    border-color: #26352b;
-
-    transform: translateY(-15px);
-}
-
-
-.featured-testimonial:hover {
-    transform:
-        translateY(-22px);
-}
-
-
-/* STARS */
-
-.stars {
-    color: #c79652;
-
-    font-size: 16px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 25px;
-}
-
-
-/* QUOTE */
-
-.testimonial-card blockquote {
-    font-family: Georgia, serif;
-
-    font-size: 21px;
-
-    line-height: 1.6;
-
-    margin-bottom: 35px;
-}
-
-
-.featured-testimonial blockquote {
-    color: rgba(255,255,255,0.9);
-}
-
-
-/* CUSTOMER */
-
-.customer {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.customer-avatar {
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #e5d6bd;
-
-    color: #26352b;
-
-    font-weight: 700;
-}
-
-
-.customer strong {
-    display: block;
-
-    font-size: 14px;
-}
-
-
-.customer span {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #777;
-
-    font-size: 12px;
-}
-
-
-.featured-testimonial
-.customer span {
-    color: rgba(255,255,255,0.6);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-    .testimonial-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .featured-testimonial {
-        transform: none;
-    }
-
-    .featured-testimonial:hover {
-        transform: translateY(-7px);
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .testimonials {
-        padding: 80px 5%;
-    }
-
-    .testimonial-card {
-        padding: 28px;
-    }
-
-}
-
+        @media (max-width: 600px) {
+            .categories,
+            .products,
+            .testimonials {
+                padding: 80px 5%;
+            }
+
+            .category-grid,
+            .product-grid,
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 320px;
+            }
+
+            .showcase {
+                padding: 80px 0;
+            }
+
+            .showcase-header {
+                padding: 0 5%;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .showcase-track {
+                padding-left: 5%;
+            }
+
+            .showcase-item {
+                flex-basis: 270px;
+            }
+
+            .testimonial-card {
+                padding: 28px;
+            }
+        }
     </style>
-
 </head>
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
+    <header>
 
-<header>
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Dheroot Organics">
+        </a>
 
-    <div class="logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Journal</a>
+            <a href="#">Contact</a>
+        </nav>
 
-        Dheroot
+        <a href="#" class="shop-button">Shop Now</a>
 
-        <span>ORGANICS</span>
+    </header>
 
-    </div>
+    <main>
 
+        <!-- =========================
+             HERO
+        ========================= -->
+        <section class="hero">
 
-    <nav>
+            <div class="hero-content">
 
-        <a href="#">Home</a>
+                <span class="hero-label">
+                    ORGANIC WELLNESS • NATURAL LIVING
+                </span>
 
-        <a href="#">Products</a>
+                <h1>
+                    Rooted in Nature.<br>
+                    Made for <em>Wellness.</em>
+                </h1>
 
-        <a href="#">About</a>
+                <p>
+                    Discover carefully selected herbs, natural ingredients
+                    and everyday wellness essentials inspired by nature
+                    and traditional wisdom.
+                </p>
 
-        <a href="#">Journal</a>
+                <div class="hero-buttons">
+                    <a href="#" class="primary-button">Explore Products</a>
+                    <a href="#" class="secondary-button">Our Story →</a>
+                </div>
 
-        <a href="#">Contact</a>
+            </div>
 
-    </nav>
+            <div class="hero-visual">
+                <div class="image-placeholder">
+                    <span>PRODUCT IMAGE</span>
+                    <small>Replace with Dheroot product photography</small>
+                </div>
+            </div>
 
+        </section>
 
-    <a href="#" class="shop-button">
-        Shop Now
-    </a>
+        <!-- =========================
+             PRODUCT CATEGORIES
+        ========================= -->
+        <section class="categories">
 
-</header>
+            <div class="section-heading">
+                <span>EXPLORE OUR WORLD</span>
 
+                <h2>Nature, thoughtfully selected.</h2>
 
+                <p>
+                    Discover natural ingredients and wellness essentials
+                    carefully chosen for everyday living.
+                </p>
+            </div>
 
-   <main>
+            <div class="category-grid">
 
-    <!-- HERO SECTION -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <span class="hero-label">
-                ORGANIC WELLNESS • NATURAL LIVING
-            </span>
-
-            <h1>
-                Rooted in Nature.<br>
-                Made for <em>Wellness.</em>
-            </h1>
-
-            <p>
-                Discover carefully selected herbs, natural ingredients
-                and everyday wellness essentials inspired by nature
-                and traditional wisdom.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#" class="primary-button">
-                    Explore Products
+                <a href="#" class="category-card">
+                    <div class="category-image">HERBS</div>
+                    <div class="category-content">
+                        <h3>Ayurvedic Herbs</h3>
+                        <p>
+                            Traditional herbs inspired by ancient
+                            wellness practices.
+                        </p>
+                        <span>Explore →</span>
+                    </div>
                 </a>
 
-                <a href="#" class="secondary-button">
-                    Our Story →
+                <a href="#" class="category-card">
+                    <div class="category-image">POWDERS</div>
+                    <div class="category-content">
+                        <h3>Herbal Powders</h3>
+                        <p>
+                            Carefully processed natural powders
+                            for everyday wellness.
+                        </p>
+                        <span>Explore →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-image">DRY FRUITS</div>
+                    <div class="category-content">
+                        <h3>Premium Dry Fruits</h3>
+                        <p>
+                            Naturally delicious ingredients selected
+                            for quality and taste.
+                        </p>
+                        <span>Explore →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-image">NUTRITION</div>
+                    <div class="category-content">
+                        <h3>Natural Nutrition</h3>
+                        <p>
+                            Simple, wholesome ingredients for modern
+                            lifestyles.
+                        </p>
+                        <span>Explore →</span>
+                    </div>
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
+        <!-- =========================
+             FEATURED PRODUCTS
+        ========================= -->
+        <section class="products">
 
-        <div class="hero-visual">
+            <div class="section-heading">
+                <span>FEATURED COLLECTION</span>
 
-            <div class="image-placeholder">
-
-                <span>PRODUCT IMAGE</span>
-
-                <small>
-                    Replace with Dheroot product photography
-                </small>
-
-            </div>
-
-        </div>
-
-    </section>
-<!-- PRODUCT CATEGORIES -->
-
-<section class="categories">
-
-    <div class="section-heading">
-
-        <span>EXPLORE OUR WORLD</span>
-
-        <h2>
-            Nature, thoughtfully selected.
-        </h2>
-
-        <p>
-            Discover natural ingredients and wellness essentials
-            carefully chosen for everyday living.
-        </p>
-
-    </div>
-
-
-    <div class="category-grid">
-
-        <a href="#" class="category-card">
-
-            <div class="category-image">
-                HERBS
-            </div>
-
-            <div class="category-content">
-
-                <h3>Ayurvedic Herbs</h3>
+                <h2>Natural favourites.</h2>
 
                 <p>
-                    Traditional herbs inspired by
-                    ancient wellness practices.
+                    Explore some of our carefully selected natural
+                    ingredients and everyday wellness essentials.
                 </p>
+            </div>
 
-                <span>Explore →</span>
+            <div class="product-grid">
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span>PRODUCT IMAGE</span>
+
+                        <div class="product-badge">
+                            BESTSELLER
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">
+                            HERBAL POWDER
+                        </span>
+
+                        <h3>Moringa Powder</h3>
+
+                        <p>
+                            Naturally sourced moringa powder
+                            for everyday nutrition.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>₹299</strong>
+                            <a href="#">View Product →</a>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span>PRODUCT IMAGE</span>
+
+                        <div class="product-badge">
+                            POPULAR
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">
+                            NATURAL INGREDIENT
+                        </span>
+
+                        <h3>Black Sesame</h3>
+
+                        <p>
+                            Premium black sesame selected
+                            for quality and freshness.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>₹249</strong>
+                            <a href="#">View Product →</a>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <span>PRODUCT IMAGE</span>
+
+                        <div class="product-badge">
+                            NEW
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-category">
+                            NATURAL SALT
+                        </span>
+
+                        <h3>Himalayan Pink Salt</h3>
+
+                        <p>
+                            Finely powdered Himalayan pink salt
+                            for everyday use.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>₹199</strong>
+                            <a href="#">View Product →</a>
+                        </div>
+                    </div>
+
+                </article>
 
             </div>
 
-        </a>
+        </section>
 
+        <!-- =========================
+             WHY DHEROOT
+        ========================= -->
+        <section class="why-dheroot">
 
-        <a href="#" class="category-card">
+            <div class="why-visual">
 
-            <div class="category-image">
-                POWDERS
-            </div>
-
-            <div class="category-content">
-
-                <h3>Herbal Powders</h3>
-
-                <p>
-                    Carefully processed natural
-                    powders for everyday wellness.
-                </p>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-
-        <a href="#" class="category-card">
-
-            <div class="category-image">
-                DRY FRUITS
-            </div>
-
-            <div class="category-content">
-
-                <h3>Premium Dry Fruits</h3>
-
-                <p>
-                    Naturally delicious ingredients
-                    selected for quality and taste.
-                </p>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-
-        <a href="#" class="category-card">
-
-            <div class="category-image">
-                NUTRITION
-            </div>
-
-            <div class="category-content">
-
-                <h3>Natural Nutrition</h3>
-
-                <p>
-                    Simple, wholesome ingredients
-                    for modern lifestyles.
-                </p>
-
-                <span>Explore →</span>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-<!-- FEATURED PRODUCTS -->
-
-<section class="products">
-
-    <div class="section-heading">
-
-        <span>FEATURED COLLECTION</span>
-
-        <h2>
-            Natural favourites.
-        </h2>
-
-        <p>
-            Explore some of our carefully selected natural
-            ingredients and everyday wellness essentials.
-        </p>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span>PRODUCT IMAGE</span>
-
-                <div class="product-badge">
-                    BESTSELLER
+                <div class="why-image">
+                    <span>DHEROOT IMAGE</span>
+                    <small>Brand / ingredient photography</small>
                 </div>
 
             </div>
 
+            <div class="why-content">
 
-            <div class="product-info">
-
-                <span class="product-category">
-                    HERBAL POWDER
+                <span class="section-label">
+                    WHY DHEROOT
                 </span>
 
-                <h3>
-                    Moringa Powder
-                </h3>
+                <h2>
+                    Simple ingredients.<br>
+                    Thoughtful choices.
+                </h2>
 
                 <p>
-                    Naturally sourced moringa powder
-                    for everyday nutrition.
+                    We believe natural wellness should be simple,
+                    transparent and accessible. Dheroot brings together
+                    carefully selected ingredients with a modern
+                    approach to everyday living.
                 </p>
 
-                <div class="product-bottom">
+                <div class="benefit-grid">
 
-                    <strong>
-                        ₹299
-                    </strong>
+                    <div class="benefit">
+                        <div class="benefit-number">01</div>
+                        <h3>Carefully Selected</h3>
+                        <p>
+                            Ingredients chosen with attention
+                            to quality and consistency.
+                        </p>
+                    </div>
 
-                    <a href="#">
-                        View Product →
-                    </a>
+                    <div class="benefit">
+                        <div class="benefit-number">02</div>
+                        <h3>Natural Ingredients</h3>
+                        <p>
+                            Straightforward ingredients inspired
+                            by nature.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-number">03</div>
+                        <h3>Quality Focused</h3>
+                        <p>
+                            We focus on quality throughout
+                            the product journey.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-number">04</div>
+                        <h3>Everyday Wellness</h3>
+                        <p>
+                            Natural choices designed for
+                            modern everyday routines.
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
 
-        </article>
+        </section>
 
+        <!-- =========================
+             BRAND STORY
+        ========================= -->
+        <section class="brand-story">
 
-        <!-- PRODUCT 2 -->
+            <div class="story-content">
 
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span>PRODUCT IMAGE</span>
-
-                <div class="product-badge">
-                    POPULAR
-                </div>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    NATURAL INGREDIENT
+                <span class="section-label">
+                    OUR STORY
                 </span>
 
-                <h3>
-                    Black Sesame
-                </h3>
+                <h2>
+                    From nature,
+                    <em>with purpose.</em>
+                </h2>
 
                 <p>
-                    Premium black sesame selected
-                    for quality and freshness.
+                    Dheroot Organics was created around a simple idea:
+                    natural ingredients deserve thoughtful sourcing,
+                    careful handling and an honest place in everyday life.
                 </p>
 
-                <div class="product-bottom">
+                <p>
+                    We bring together traditional knowledge and modern
+                    presentation to make natural wellness easier to
+                    discover, understand and enjoy.
+                </p>
 
-                    <strong>
-                        ₹249
-                    </strong>
+                <a href="#" class="story-button">
+                    Discover Our Story →
+                </a>
 
-                    <a href="#">
-                        View Product →
-                    </a>
+            </div>
 
+            <div class="story-visual">
+
+                <div class="story-card story-card-back">
+                    <span>NATURAL</span>
+                </div>
+
+                <div class="story-card story-card-front">
+                    <span>DHEROOT</span>
+                    <small>ROOTED IN NATURE</small>
+                </div>
+
+                <div class="story-circle">
+                    ORGANIC<br>
+                    WELLNESS
                 </div>
 
             </div>
 
-        </article>
+        </section>
 
+        <!-- =========================
+             INGREDIENT SHOWCASE
+        ========================= -->
+        <section class="showcase">
 
-        <!-- PRODUCT 3 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span>PRODUCT IMAGE</span>
-
-                <div class="product-badge">
-                    NEW
-                </div>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    NATURAL SALT
-                </span>
-
-                <h3>
-                    Himalayan Pink Salt
-                </h3>
-
-                <p>
-                    Finely powdered Himalayan pink salt
-                    for everyday use.
-                </p>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        ₹199
-                    </strong>
-
-                    <a href="#">
-                        View Product →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-<!-- WHY DHEROOT -->
-
-<section class="why-dheroot">
-
-    <div class="why-visual">
-
-        <div class="why-image">
-
-            <span>DHEROOT IMAGE</span>
-
-            <small>
-                Brand / ingredient photography
-            </small>
-
-        </div>
-
-    </div>
-
-
-    <div class="why-content">
-
-        <span class="section-label">
-            WHY DHEROOT
-        </span>
-
-        <h2>
-            Simple ingredients.
-            Thoughtful choices.
-        </h2>
-
-        <p>
-            We believe natural wellness should be simple,
-            transparent and accessible. Dheroot brings together
-            carefully selected ingredients with a modern approach
-            to everyday living.
-        </p>
-
-
-        <div class="benefit-grid">
-
-
-            <div class="benefit">
-
-                <div class="benefit-number">
-                    01
-                </div>
-
-                <h3>
-                    Carefully Selected
-                </h3>
-
-                <p>
-                    Ingredients chosen with attention
-                    to quality and consistency.
-                </p>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-number">
-                    02
-                </div>
-
-                <h3>
-                    Natural Ingredients
-                </h3>
-
-                <p>
-                    Straightforward ingredients inspired
-                    by nature.
-                </p>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-number">
-                    03
-                </div>
-
-                <h3>
-                    Quality Focused
-                </h3>
-
-                <p>
-                    We focus on quality throughout
-                    the product journey.
-                </p>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-number">
-                    04
-                </div>
-
-                <h3>
-                    Everyday Wellness
-                </h3>
-
-                <p>
-                    Natural choices designed for
-                    modern everyday routines.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-<!-- BRAND STORY -->
-
-<section class="brand-story">
-
-    <div class="story-content">
-
-        <span class="section-label">
-            OUR STORY
-        </span>
-
-        <h2>
-            From nature,
-            <em>with purpose.</em>
-        </h2>
-
-        <p>
-            Dheroot Organics was created around a simple idea:
-            natural ingredients deserve thoughtful sourcing,
-            careful handling and an honest place in everyday life.
-        </p>
-
-        <p>
-            We bring together traditional knowledge and modern
-            presentation to make natural wellness easier to
-            discover, understand and enjoy.
-        </p>
-
-        <a href="#" class="story-button">
-            Discover Our Story →
-        </a>
-
-    </div>
-
-
-    <div class="story-visual">
-
-        <div class="story-card story-card-back">
-            <span>NATURAL</span>
-        </div>
-
-        <div class="story-card story-card-front">
-            <span>DHEROOT</span>
-            <small>ROOTED IN NATURE</small>
-        </div>
-
-        <div class="story-circle">
-            ORGANIC<br>
-            WELLNESS
-        </div>
-
-    </div>
-
-</section>
-<!-- INGREDIENT SHOWCASE -->
-
-<section class="showcase">
-
-    <div class="showcase-header">
-
-        <div>
-
-            <span class="section-label">
-                NATURAL SELECTION
-            </span>
-
-            <h2>
-                Ingredients with
-                <em>character.</em>
-            </h2>
-
-        </div>
-
-        <a href="#" class="showcase-link">
-            View All Products →
-        </a>
-
-    </div>
-
-
-    <div class="showcase-track">
-
-
-        <article class="showcase-item">
-
-            <div class="showcase-image">
-                MORINGA
-            </div>
-
-            <div class="showcase-info">
-
-                <span>
-                    HERBAL POWDER
-                </span>
-
-                <h3>
-                    Moringa
-                </h3>
-
-                <p>
-                    Green vitality from
-                    a naturally valued leaf.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="showcase-item">
-
-            <div class="showcase-image">
-                SESAME
-            </div>
-
-            <div class="showcase-info">
-
-                <span>
-                    NATURAL SEED
-                </span>
-
-                <h3>
-                    Black Sesame
-                </h3>
-
-                <p>
-                    Rich, earthy and naturally
-                    full of character.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="showcase-item">
-
-            <div class="showcase-image">
-                ASHWAGANDHA
-            </div>
-
-            <div class="showcase-info">
-
-                <span>
-                    AYURVEDIC HERB
-                </span>
-
-                <h3>
-                    Ashwagandha
-                </h3>
-
-                <p>
-                    A traditional ingredient
-                    rooted in Ayurveda.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="showcase-item">
-
-            <div class="showcase-image">
-                PINK SALT
-            </div>
-
-            <div class="showcase-info">
-
-                <span>
-                    NATURAL MINERAL
-                </span>
-
-                <h3>
-                    Himalayan Pink Salt
-                </h3>
-
-                <p>
-                    Naturally sourced mineral
-                    salt with distinctive character.
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-<!-- TESTIMONIALS -->
-
-<section class="testimonials">
-
-    <div class="section-heading testimonial-heading">
-
-        <span>FROM OUR COMMUNITY</span>
-
-        <h2>
-            Loved for the little things.
-        </h2>
-
-        <p>
-            Natural choices become meaningful when
-            they fit beautifully into everyday life.
-        </p>
-
-    </div>
-
-
-    <div class="testimonial-grid">
-
-
-        <!-- TESTIMONIAL 1 -->
-
-        <article class="testimonial-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <blockquote>
-                "The quality and presentation are
-                both excellent. Dheroot feels simple,
-                clean and trustworthy."
-            </blockquote>
-
-            <div class="customer">
-
-                <div class="customer-avatar">
-                    A
-                </div>
+            <div class="showcase-header">
 
                 <div>
-
-                    <strong>
-                        Ananya
-                    </strong>
-
-                    <span>
-                        Kochi, Kerala
+                    <span class="section-label">
+                        NATURAL SELECTION
                     </span>
 
+                    <h2>
+                        Ingredients with <em>character.</em>
+                    </h2>
                 </div>
+
+                <a href="#" class="showcase-link">
+                    View All Products →
+                </a>
 
             </div>
 
-        </article>
+            <div class="showcase-track">
 
+                <article class="showcase-item">
+                    <div class="showcase-image">MORINGA</div>
 
-        <!-- TESTIMONIAL 2 -->
+                    <div class="showcase-info">
+                        <span>HERBAL POWDER</span>
+                        <h3>Moringa</h3>
+                        <p>
+                            Green vitality from a naturally
+                            valued leaf.
+                        </p>
+                    </div>
+                </article>
 
-        <article class="testimonial-card featured-testimonial">
+                <article class="showcase-item">
+                    <div class="showcase-image">SESAME</div>
 
-            <div class="stars">
-                ★★★★★
-            </div>
+                    <div class="showcase-info">
+                        <span>NATURAL SEED</span>
+                        <h3>Black Sesame</h3>
+                        <p>
+                            Rich, earthy and naturally full
+                            of character.
+                        </p>
+                    </div>
+                </article>
 
-            <blockquote>
-                "I love the focus on natural
-                ingredients. The products have
-                become part of my everyday routine."
-            </blockquote>
+                <article class="showcase-item">
+                    <div class="showcase-image">ASHWAGANDHA</div>
 
-            <div class="customer">
+                    <div class="showcase-info">
+                        <span>AYURVEDIC HERB</span>
+                        <h3>Ashwagandha</h3>
+                        <p>
+                            A traditional ingredient rooted
+                            in Ayurveda.
+                        </p>
+                    </div>
+                </article>
 
-                <div class="customer-avatar">
-                    R
-                </div>
+                <article class="showcase-item">
+                    <div class="showcase-image">PINK SALT</div>
 
-                <div>
-
-                    <strong>
-                        Rahul
-                    </strong>
-
-                    <span>
-                        Bengaluru, India
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- TESTIMONIAL 3 -->
-
-        <article class="testimonial-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <blockquote>
-                "Beautifully presented and easy to
-                understand. It feels like a brand
-                that genuinely cares about quality."
-            </blockquote>
-
-            <div class="customer">
-
-                <div class="customer-avatar">
-                    M
-                </div>
-
-                <div>
-
-                    <strong>
-                        Meera
-                    </strong>
-
-                    <span>
-                        Chennai, India
-                    </span>
-
-                </div>
+                    <div class="showcase-info">
+                        <span>NATURAL MINERAL</span>
+                        <h3>Himalayan Pink Salt</h3>
+                        <p>
+                            Naturally sourced mineral salt
+                            with distinctive character.
+                        </p>
+                    </div>
+                </article>
 
             </div>
 
-        </article>
+        </section>
 
+        <!-- =========================
+             TESTIMONIALS
+        ========================= -->
+        <section class="testimonials">
 
-    </div>
+            <div class="section-heading testimonial-heading">
 
-</section>
+                <span>FROM OUR COMMUNITY</span>
 
-</main>
+                <h2>Loved for the little things.</h2>
 
+                <p>
+                    Natural choices become meaningful when
+                    they fit beautifully into everyday life.
+                </p>
 
+            </div>
+
+            <div class="testimonial-grid">
+
+                <article class="testimonial-card">
+
+                    <div class="stars">★★★★★</div>
+
+                    <blockquote>
+                        "The quality and presentation are
+                        both excellent. Dheroot feels simple,
+                        clean and trustworthy."
+                    </blockquote>
+
+                    <div class="customer">
+                        <div class="customer-avatar">A</div>
+
+                        <div>
+                            <strong>Ananya</strong>
+                            <span>Kochi, Kerala</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="testimonial-card featured-testimonial">
+
+                    <div class="stars">★★★★★</div>
+
+                    <blockquote>
+                        "I love the focus on natural ingredients.
+                        The products have become part of my
+                        everyday routine."
+                    </blockquote>
+
+                    <div class="customer">
+                        <div class="customer-avatar">R</div>
+
+                        <div>
+                            <strong>Rahul</strong>
+                            <span>Bengaluru, India</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="testimonial-card">
+
+                    <div class="stars">★★★★★</div>
+
+                    <blockquote>
+                        "Beautifully presented and easy to
+                        understand. It feels like a brand
+                        that genuinely cares about quality."
+                    </blockquote>
+
+                    <div class="customer">
+                        <div class="customer-avatar">M</div>
+
+                        <div>
+                            <strong>Meera</strong>
+                            <span>Chennai, India</span>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
 </html>
